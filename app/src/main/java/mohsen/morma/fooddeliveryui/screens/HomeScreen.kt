@@ -115,7 +115,6 @@ fun HomeScreen(navController: NavHostController) {
             width = Dimension.fillToConstraints
             height = Dimension.wrapContent
         }
-
         /**txt Favorite Food*/
         constrain(txtFavoriteFood) {
             top.linkTo(popularList.bottom, 24.dp)
@@ -124,7 +123,6 @@ fun HomeScreen(navController: NavHostController) {
             width = Dimension.fillToConstraints
             height = Dimension.wrapContent
         }
-
         /**Favorite List*/
         constrain(favoriteList) {
             top.linkTo(txtFavoriteFood.bottom, 14.dp)
@@ -412,8 +410,7 @@ fun FavoriteBox(food: FoodInfo, navController: NavHostController) {
     val favoriteFoodAsGson = gson.toJson(food)
 
 
-    Box(
-        Modifier
+    Box(Modifier
             .clickable(onClick = {
                 isPopular = false
                 navController.navigate("OrderScreen/$favoriteFoodAsGson")
@@ -421,8 +418,7 @@ fun FavoriteBox(food: FoodInfo, navController: NavHostController) {
             .size(width = 320.dp, height = 140.dp)
             .padding(horizontal = 10.dp)
             .background(color = WhiteColor, shape = RoundedCornerShape(16.dp))
-            .clip(RoundedCornerShape(16.dp))
-    ) {
+            .clip(RoundedCornerShape(16.dp))) {
         Column(
             Modifier
                 .fillMaxWidth()
@@ -480,7 +476,7 @@ fun FavoriteBox(food: FoodInfo, navController: NavHostController) {
                 )
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        text = food.discountPrice,
+                        text = "${food.discountPrice} IRR.",
                         color = OrangeColor,
                         fontWeight = FontWeight.Bold
                     )
@@ -510,12 +506,12 @@ fun fillFoodInfo() {
             listOf(R.drawable.salad_on_dish,R.drawable.fruits_salad2,R.drawable.fruits_salad3,R.drawable.fruits_salad4),
             "Fruits Salad",
             "120000 IRR.",
-            "60000 IRR.",
+            60000,
             "Vegan Restaurant ",
             "10 min Delivery Time",
             "2Km Distance Away",
             4.8f,
-            "a cold dish consisting of various types of small or cut-up fruit, usually served as a dessert or first course."
+            "Fruit salad is a dish consisting of various kinds of fruit, sometimes served in a liquid, either their juices or a syrup. In different forms, fruit salad can be served as an appetizer or a side salad. When served as an appetizer."
         )
     )
 
@@ -524,7 +520,7 @@ fun fillFoodInfo() {
             listOf(R.drawable.kebab_chicken_kebab,R.drawable.kebab_chicken_kebab2,R.drawable.chicken_kebab),
             "Mix Kebab",
             "100000 IRR.",
-            "50000 IRR.",
+            50000,
             "Alborz Restaurant ",
             "25 min Delivery Time",
             "100m Distance Away ",
@@ -538,12 +534,12 @@ fun fillFoodInfo() {
             listOf(R.drawable.potato_pizza,R.drawable.potato_pizza2,R.drawable.potato_pizza3),
             "Potato Pizza",
             "120000 IRR.",
-            "60000 IRR.",
+            60000,
             "Pizzar Restaurant ",
             "15 min Delivery Time",
             "5Km Distance Away",
             5.0f,
-            "There are so many versions of this tasty, simple rustic pizza that can be found all across Italy, and it is considered a great example of peasant food since it is both filling and inexpensive to make. In many regions, thinly sliced potatoes are used to top basic pizza dough most often with no tomato sauce. Instead, the pizza is created by simply combining some shredded cheese, thin slices of potatoes, fresh herbs and a drizzle of extra virgin olive oil."
+            "There are so many versions of this tasty, simple rustic pizza that can be found all across Italy, and it is considered a great example of peasant food since it is both filling and inexpensive to make. "
 
         )
     )
@@ -553,12 +549,12 @@ fun fillFoodInfo() {
             listOf(R.drawable.kebab,R.drawable.chelo_kebab,R.drawable.chelo),
             "Iranian Kebab",
             "90000 IRR.",
-            "45000 IRR.",
+            45000,
             "Heeva Cafe Kebab ",
             "30 min Delivery Time",
             "500m Distance Away ",
             4.2f,
-            "Kabab koobideh is grilled on wide, flat skewers, traditionally over hot coals, and is served with chelow (plain white rice with oil, salt and saffron), accompanied by grilled tomatoes and onions. Sumac is usually served as a tableside garnishing spice.\n"
+            "Kabab koobideh is grilled on wide, flat skewers, traditionally over hot coals, and is served with chelow (plain white rice with oil, salt and saffron), accompanied by grilled tomatoes and onions."
         )
     )
 
