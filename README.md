@@ -1,5 +1,4 @@
 # Food Delivery UI
-## _Lovely Food Delivery UI App_
 
 Hello guys, This is a food delivery UI from dribble site: 
 _https://dribbble.com/shots/20193601-Food-Delivery-App_
